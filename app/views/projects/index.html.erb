@@ -1,0 +1,13 @@
+<% @projects.each do |project| %>
+  <%= project.title %>
+  <% if policy(project).edit? %>
+    <%= link_to "Modifier", edit_project_path(project) %>
+  <% end %>
+  <% if policy(project).destroy? %>
+    <%= link_to "Supprimer", project_path(project), method: :delete %>
+  <% end %>
+<% end %>
+
+<% if policy(Project).create? %>
+    <%= link_to "Ajouter un projet", new_project_path %>
+  <% end %>

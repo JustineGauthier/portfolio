@@ -1,0 +1,8 @@
+<%= simple_form_for(@project) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :url %>
+  <%= f.input :description %>
+  <%= f.input :creation_date, as: :date, html5: true %>
+  <%= f.select :categorie %>
+  <%= f.submit %>
+<% end %>

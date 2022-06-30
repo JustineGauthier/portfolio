@@ -24,10 +24,9 @@ gem 'jbuilder', '~> 2.7'
 
 
 gem 'devise'
-
-gem 'rails_admin', '~> 3.0'
-
 gem 'pundit'
+
+gem 'simple_form', github: 'heartcombo/simple_form'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'

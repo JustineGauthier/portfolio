@@ -16,7 +16,10 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
   end
 
-  def edit; end
+  def edit
+    @categories_instances = Categorie.all
+    @categories_names = @categories_instances.map(&:name)
+  end
 
   def update
     @project.update(project_params)
@@ -24,7 +27,7 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy(project_params)
+    @project.destroy
     redirect_to root_path, notice: 'Ce projet à bien été supprimé !'
   end
 

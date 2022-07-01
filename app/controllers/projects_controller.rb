@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: %i[show edit update destroy authorize]
-  before_action :authorized, only: %i[new create edit update destroy]
+  before_action :set_project, only: %i[show edit update destroy authorized]
+  before_action :authorized, only: %i[edit update destroy]
 
   def show; end
 
@@ -10,13 +10,24 @@ class ProjectsController < ApplicationController
 
   def new
     @project = Project.new
+    authorize @project
   end
 
   def create
     @project = Project.new(project_params)
+    authorize @project
+    if @project.save!
+      redirect_to root_path
+    else
+      render :new, notice: 'Oups, il y a eu un petit problème...'
+    end
   end
 
-  def edit; end
+  def edit
+    @categories_instances = Categorie.all
+    @categories_names = @categories_instances.map(&:name)
+    @categories_ids = @categories_instances.map(&:id)
+  end
 
   def update
     @project.update(project_params)
@@ -24,14 +35,14 @@ class ProjectsController < ApplicationController
   end
 
   def destroy
-    @project.destroy(project_params)
+    @project.destroy
     redirect_to root_path, notice: 'Ce projet à bien été supprimé !'
   end
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :url, :creation_date, :categorie)
+    params.require(:project).permit(:title, :description, :url, :creation_date, :categorie_id)
   end
 
   def set_project

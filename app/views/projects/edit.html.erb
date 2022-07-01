@@ -5,7 +5,7 @@
   <%= f.input :url %>
   <%= f.input :description %>
   <%= f.input :creation_date, as: :date, html5: true %>
-
-  <%= f.input :categorie, as: :radio_buttons, collection: [['0', 'female'], ['1', 'male']], label_method: :second, value_method: :first %>
+  <%= f.label :categorie %>
+  <%= f.collection_radio_buttons :categorie_id, Categorie.all, :id, :name %>
   <%= f.submit %>
 <% end %>

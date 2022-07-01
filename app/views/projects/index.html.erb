@@ -1,5 +1,6 @@
 <% @projects.each do |project| %>
   <%= project.title %>
+  <%= project.categorie.name %>
   <% if policy(project).edit? %>
     <%= link_to "Modifier", edit_project_path(project) %>
   <% end %>

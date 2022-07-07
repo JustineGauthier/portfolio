@@ -1,6 +1,7 @@
 <% @projects.each do |project| %>
   <%= project.title %>
   <%= project.categorie.name %>
+  <%= cl_image_tag(project.photo.key, width: 400, height: 300, crop: :fill) %>
   <% if policy(project).edit? %>
     <%= link_to "Modifier", edit_project_path(project) %>
   <% end %>

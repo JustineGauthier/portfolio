@@ -2,7 +2,7 @@
   <% @projects.each do |project| %>
     <input data-controller="toggle-background"
            data-action="click->toggle-background#background"
-           data-toggle-background-target="input"
+           data-toggle-background-target="background.input"
            type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count === 1 ? "checked" : "" %> >
     <% @count += 1 %>
   <% end %>

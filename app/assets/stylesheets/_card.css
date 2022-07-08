@@ -11,20 +11,21 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   width: 25%;
   padding: 8% 5%;
-  margin: 0 15px;
 }
 
 .scroll {
   display: flex;
   overflow-x: scroll;
+  flex-direction: column;
 }
 
 .scroll::-webkit-scrollbar {
   display: none;
 }
 
-@media (max-width: 576px) {
-  .card-category {
-    min-width: 180px;
+@media (min-width: 576px) {
+  .scroll {
+    margin: 0 10%;
+    flex-direction: row;
   }
 }

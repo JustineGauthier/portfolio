@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @count = 1
+    @count2 = 1
+    @count3 = 1
   end
 
   def new

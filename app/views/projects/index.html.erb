@@ -1,6 +1,9 @@
 <div class="container">
   <% @projects.each do |project| %>
-    <input type="radio" name="slider" id="item-<%=@count.to_s%>"  <%= @count === 1 ? "checked" : "" %> >
+    <input data-controller="toggle-background"
+           data-action="click->toggle-background#background"
+           data-toggle-background-target="input"
+           type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count === 1 ? "checked" : "" %> >
     <% @count += 1 %>
   <% end %>
   <div class="cards">
@@ -27,7 +30,3 @@
     </div>
   </div>
 </div>
-<script> $('input').on('change', function() {
-  $('body').toggleClass('blue');
-  });
-</script>

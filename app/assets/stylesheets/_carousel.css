@@ -11,7 +11,7 @@ html, body {
   height: 100%;
 }
 
-body {
+.home {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,10 +19,11 @@ body {
   font-family: 'DM Sans', sans-serif;
   transition: background .4s ease-in;
   background-color: #c394f8;
+  width: 100wv;
+}
 
-  &.blue {
-    background-color: #428aa6;
-  }
+.blue {
+  background-color: #428aa6 !important;
 }
 
 input[type=radio] {
@@ -41,9 +42,7 @@ input[type=radio] {
 }
 
 .container {
-  width: 100%;
-  max-width: 800px;
-  max-height: 600px;
+
   height: 100%;
   transform-style: preserve-3d;
   display: flex;

@@ -1,15 +1,13 @@
-<div class="container">
+<div class="container home" data-controller="toggle-background">
   <% @projects.each do |project| %>
-    <input data-controller="toggle-background"
-           data-action="click->toggle-background#background"
-           data-toggle-background-target="background.input"
-           type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count === 1 ? "checked" : "" %> >
+    <input data-action="click->toggle-background#background"
+           type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >
     <% @count += 1 %>
   <% end %>
   <div class="cards">
     <% @projects.each do |project| %>
       <label class="card" for="item-<%=@count2%>" id="project-<%=@count2.to_s%>">
-        <img src="<%= cl_image_path project.photo.key, height: 300, crop: :fill %>" alt="project">
+        <img src="<%= cl_image_path project.photo.key, height: 300, crop: :crop %>" alt="project">
       </label>
       <% @count2 += 1 %>
     <% end %>
@@ -22,6 +20,12 @@
             <div class="title"><%= project.title %></div>
             <div class="sub-line">
               <div class="subtitle"><%= project.categorie.name %></div>
+              <% if policy(project).edit? %>
+                <%= link_to "Modifier", edit_project_path(project) %>
+              <% end %>
+              <% if policy(project).destroy? %>
+                <%= link_to "Supprimer", project_path(project), method: :delete %>
+              <% end %>
             </div>
           </label>
           <% @count3 += 1 %>

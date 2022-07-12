@@ -1,0 +1,16 @@
+ <%= project.description %>
+  <div class="sub-line">
+    <% if policy(project).edit? %>
+      <%= link_to "Modifier", edit_project_path(project) %>
+    <% end %>
+    <% if policy(project).destroy? %>
+      <%= link_to "Supprimer", project_path(project), method: :delete %>
+    <% end %>
+  </div>
+
+/*
+@media only screen and (max-width: 600px){
+  .player {
+    min-width: 80vw;
+  }
+} */

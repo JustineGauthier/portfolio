@@ -18,12 +18,11 @@ html, body {
   padding: 30px 10px;
   font-family: 'DM Sans', sans-serif;
   transition: background .4s ease-in;
-  background-color: #c394f8;
-  width: 100wv;
+  background-color: #C8648B;
 }
 
 .blue {
-  background-color: #428aa6 !important;
+  background-color: #ee857f !important;
 }
 
 input[type=radio] {
@@ -31,6 +30,8 @@ input[type=radio] {
 }
 
 .card {
+  align-items: center;
+  display: flex;
   position: absolute;
   width: 60%;
   height: 100%;
@@ -42,7 +43,6 @@ input[type=radio] {
 }
 
 .container {
-
   height: 100%;
   transform-style: preserve-3d;
   display: flex;
@@ -61,19 +61,24 @@ input[type=radio] {
 img {
   width: 100%;
   height: 100%;
-  border-radius: 10px;
-  object-fit: cover;
+  object-fit: contain;
+}
+
+@media only screen and (max-width: 600px){
+  .img {
+    max-height: 50%;;
+  }
 }
 
 #item-1:checked ~ .cards #project-3, #item-2:checked ~ .cards #project-1, #item-3:checked ~ .cards #project-2 {
   transform: translatex(-40%) scale(.8);
-  opacity: .4;
+  opacity: .6;
   z-index: 0;
 }
 
 #item-1:checked ~ .cards #project-2, #item-2:checked ~ .cards #project-3, #item-3:checked ~ .cards #project-1 {
   transform: translatex(40%) scale(.8);
-  opacity: .4;
+  opacity: .6;
   z-index: 0;
 }
 
@@ -98,12 +103,9 @@ img {
   position: relative;
   display: flex;
   align-items: center;
-  margin-bottom: 12px;
-  height: 36px;
+  height: 40px;
   overflow: hidden;
 }
-
-.play-icon{ margin-right: 10px; }
 
 .project-info {
   width: calc(100% - 32px);
@@ -112,7 +114,7 @@ img {
 
 .project-info .title {
   color: #403d40;
-  font-size: 14px;
+  font-weight: bold;
   line-height: 24px;
 }
 
@@ -122,35 +124,10 @@ img {
   width: 100%;
 }
 
-.subtitle, .time {
-  font-size: 12px;
+.subtitle {
+  font-size: 14px;
   line-height: 16px;
-  color: #c6c5c6;
-}
-
-.time {
-  font-size: 12px;
-  line-height: 16px;
-  color: #a5a5a5;
-  font-weight: 500;
-  margin-left: auto;
-}
-
-.progress-bar {
-  height: 3px;
-  width: 100%;
-  background-color: #e9efff;
-  border-radius: 2px;
-  overflow: hidden;
-}
-
-.progress {
-  display: block;
-  position: relative;
-  width: 60%;
-  height: 100%;
-  background-color: #2992dc;
-  border-radius: 6px;
+  color: #848384;
 }
 
 .info-area {

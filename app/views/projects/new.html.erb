@@ -5,5 +5,8 @@
   <%= f.input :creation_date, as: :date, html5: true %>
   <%= f.label :categorie %>
   <%= f.collection_radio_buttons :categorie_id, Categorie.all, :id, :name %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
+
+<%= link_to 'retour', root_path %>

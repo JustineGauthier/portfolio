@@ -6,6 +6,9 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all
+    @count = 1
+    @count2 = 1
+    @count3 = 1
   end
 
   def new
@@ -42,7 +45,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :url, :creation_date, :categorie_id)
+    params.require(:project).permit(:title, :description, :url, :creation_date, :categorie_id, :photo)
   end
 
   def set_project

@@ -28,6 +28,8 @@ gem "cloudinary"
 gem 'devise'
 gem 'pundit'
 
+gem 'sass-rails', '>= 6'
+
 gem 'simple_form', github: 'heartcombo/simple_form'
 
 # Use Active Storage variant

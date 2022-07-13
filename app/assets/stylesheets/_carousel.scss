@@ -21,7 +21,7 @@ html, body {
   background-color: #C8648B;
 }
 
-.blue {
+.second_background {
   background-color: #ee857f !important;
 }
 
@@ -34,7 +34,7 @@ input[type=radio] {
   justify-content: center;
   display: flex;
   position: absolute;
-  width: 60%;
+  width: 50%;
   height: 100%;
   left: 0;
   right: 0;
@@ -56,7 +56,6 @@ input[type=radio] {
   position: relative;
   width: 100%;
   height: 100%;
-  margin-bottom: 20px;
 }
 
 img {
@@ -66,8 +65,16 @@ img {
 }
 
 @media only screen and (max-width: 600px){
-  img {
-    max-height: 60%;
+  .cards {
+    height: 30%;
+  }
+
+  #item-1:checked ~ .cards #project-3, #item-2:checked ~ .cards #project-1, #item-3:checked ~ .cards #project-2 {
+    transform: translatex(-55%) scale(.8)!important;
+  }
+
+  #item-1:checked ~ .cards #project-2, #item-2:checked ~ .cards #project-3, #item-3:checked ~ .cards #project-1 {
+    transform: translatex(55%) scale(.8)!important;
   }
 
   #item-1:checked ~ .cards #project-1, #item-2:checked ~ .cards #project-2, #item-3:checked ~ .cards #project-3 {

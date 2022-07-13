@@ -19,11 +19,23 @@
           <label class="project-info" id="project-info-<%=@count3%>">
             <div class="title"><%= project.title %></div>
               <div class="subtitle"><%= project.categorie.name %></div>
-
           </label>
           <% @count3 += 1 %>
         <% end %>
       </div>
     </div>
+  </div>
+  <div class="admin">
+    <% @projects.each do |project| %>
+      <div>
+        <% if policy(project).edit? %>
+          <%= project.title %>
+          <%= link_to "Modifier", edit_project_path(project) %>
+        <% end %>
+        <% if policy(project).destroy? %>
+          <%= link_to "Supprimer", project_path(project), method: :delete %>
+        <% end %>
+      </div>
+    <% end %>
   </div>
 </div>

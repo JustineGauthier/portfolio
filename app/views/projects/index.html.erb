@@ -1,4 +1,7 @@
 <div class="container home" data-controller="toggle-background">
+  <div class="banner">
+  <h1>Hey,<br>Je suis Justine,<br>Web développeuse !</h1>
+  </div>
   <% @projects.each do |project| %>
     <input data-action="click->toggle-background#background"
            type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >

@@ -17,12 +17,14 @@ html, body {
   justify-content: center;
   padding: 30px 10px;
   font-family: 'DM Sans', sans-serif;
-  transition: background .4s ease-in;
-  background-color: #C8648B;
+  transition: background-color 1.5s;
+  background-color: #ee857f;
+  background-image: linear-gradient(90deg, rgba(246, 186, 183, 0.7) 0%, rgba(255,255,255,0));
 }
 
 .second_background {
-  background-color: #ee857f !important;
+  background-color: #C8648B;
+  background-image: linear-gradient(90deg, rgba(246, 186, 183, 0.7) 0%, rgba(255,255,255,0));
 }
 
 input[type=radio] {
@@ -35,12 +37,14 @@ input[type=radio] {
   display: flex;
   position: absolute;
   width: 50%;
-  height: 100%;
+  height: auto;
   left: 0;
   right: 0;
   margin: auto;
   transition: transform .4s ease;
   cursor: pointer;
+  border-radius: 20%;
+  box-shadow: 0 10px 30px rgba(0,0,0,.2);
 }
 
 .container {

@@ -1,44 +1,50 @@
-<div class="container home" data-controller="toggle-background">
+<div class="container" data-controller="toggle-background">
   <div class="banner">
-  <h1>Hey,<br>Je suis Justine,<br>Web développeuse !</h1>
+  <h1>Hey,<br>I'm Justine,<br>A web developper !</h1>
   </div>
-  <% @projects.each do |project| %>
-    <input data-action="click->toggle-background#background"
-           type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >
-    <% @count += 1 %>
-  <% end %>
-  <div class="cards">
+  <div class="carousel">
     <% @projects.each do |project| %>
-      <label class="card" for="item-<%=@count2%>" id="project-<%=@count2.to_s%>">
-        <img src="<%= cl_image_path project.photo.key, radius: 20 %>" alt="project">
-      </label>
-      <% @count2 += 1 %>
+      <input data-action="click->toggle-background#background"
+        type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >
+      <% @count += 1 %>
     <% end %>
-  </div>
-  <div class="player">
-    <div class="upper-part">
-      <div class="info-area" id="test">
-        <% @projects.each do |project| %>
-          <label class="project-info" id="project-info-<%=@count3%>">
-            <div class="title"><%= project.title %></div>
-              <div class="subtitle"><%= project.categorie.name %></div>
-          </label>
-          <% @count3 += 1 %>
-        <% end %>
+    <div class="cards">
+      <% @projects.each do |project| %>
+        <label class="card" for="item-<%=@count2%>" id="project-<%=@count2.to_s%>">
+          <a href="<%= project_path(project)%>">
+            <img src="<%= cl_image_path project.photo.key, radius: 20 %>" alt="project">
+          </a>
+        </label>
+        <% @count2 += 1 %>
+      <% end %>
+    </div>
+    <div class="player">
+      <div class="upper-part">
+        <div class="info-area" id="slide">
+          <% @projects.each do |project| %>
+            <label class="project-info" id="project-info-<%=@count3%>">
+              <%= link_to project_path(project) do %>
+                <div class="title"><%= project.title %></div>
+                <div class="subtitle"><%= project.categorie.name %></div>
+              <% end %>
+            </label>
+            <% @count3 += 1 %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="admin">
-    <% @projects.each do |project| %>
-      <div>
-        <% if policy(project).edit? %>
-          <%= project.title %>
-          <%= link_to "Modifier", edit_project_path(project) %>
-        <% end %>
-        <% if policy(project).destroy? %>
-          <%= link_to "Supprimer", project_path(project), method: :delete %>
-        <% end %>
-      </div>
-    <% end %>
+    <div class="admin">
+      <% @projects.each do |project| %>
+        <div>
+          <% if policy(project).edit? %>
+            <%= project.title %>
+            <%= link_to "Modifier", edit_project_path(project) %>
+          <% end %>
+          <% if policy(project).destroy? %>
+            <%= link_to "Supprimer", project_path(project), method: :delete %>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>

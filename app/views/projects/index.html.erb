@@ -1,24 +1,31 @@
-<div class="container home" data-controller="toggle-background">
+<div class="banner">
+  <h1>Hey,<br>I'm Justine,<br>A web developper !</h1>
+</div>
+<div class="container">
   <% @projects.each do |project| %>
     <input data-action="click->toggle-background#background"
-           type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >
+      type="radio" name="slider" id="item-<%=@count.to_s%>" <%= @count == 1 ? "checked" : "" %> >
     <% @count += 1 %>
   <% end %>
   <div class="cards">
     <% @projects.each do |project| %>
       <label class="card" for="item-<%=@count2%>" id="project-<%=@count2.to_s%>">
-        <img src="<%= cl_image_path project.photo.key, radius: 20 %>" alt="project">
+        <a href="<%= project_path(project)%>">
+          <img src="<%= cl_image_path project.photo.key, radius: 20 %>" alt="project">
+        </a>
       </label>
       <% @count2 += 1 %>
     <% end %>
   </div>
   <div class="player">
     <div class="upper-part">
-      <div class="info-area" id="test">
+      <div class="info-area" id="slide">
         <% @projects.each do |project| %>
           <label class="project-info" id="project-info-<%=@count3%>">
-            <div class="title"><%= project.title %></div>
+            <%= link_to project_path(project) do %>
+              <div class="title"><%= project.title %></div>
               <div class="subtitle"><%= project.categorie.name %></div>
+            <% end %>
           </label>
           <% @count3 += 1 %>
         <% end %>
@@ -38,4 +45,12 @@
       </div>
     <% end %>
   </div>
+</div>
+<div>
+  <p>Coucou</p>
+  <br>
+  <br>
+  <br>
+  <br>
+  <p>coucou</p>
 </div>

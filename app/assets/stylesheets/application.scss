@@ -14,22 +14,14 @@
  *= require_self
  */
 
-@import "components/index";
+@import "config/index";
 @import "pages/index";
-@import "config/fonts";
+@import "components/index";
+@import "font-awesome";
 
-body {
+* {
   font-family: "Comfortaa", "Helvetica", "sans-serif";
-  transition: background-color 1.5s;
-  background-color: #FAE39D;
-  background-image: linear-gradient(90deg, rgba(232, 167, 149, 0.7) 0%, rgba(255,255,255,0));
 }
-
-.second_background {
-  background-color: #E7D9FC;
-  background-image: linear-gradient(90deg, rgba(232, 167, 149, 0.7) 0%, rgba(255,255,255,0));
-}
-
 
 a {
   text-decoration: none;

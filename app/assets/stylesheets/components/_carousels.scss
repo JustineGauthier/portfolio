@@ -1,3 +1,14 @@
+.background_index {
+  transition: background-color 1.5s;
+  background-color: #DBD4C9;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255,255,255,0));
+}
+
+.second_background {
+  background-color: #858585;
+  background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.7) 0%, rgba(255,255,255,0));
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -99,7 +110,6 @@ img {
 }
 
 .project-info .title {
-  color: #403d40;
   font-weight: bold;
   line-height: 24px;
 }

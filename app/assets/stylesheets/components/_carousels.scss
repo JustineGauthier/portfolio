@@ -7,8 +7,8 @@
   height: 90vh;
   transform-style: preserve-3d;
   transition: background-color 1.5s;
-  border: #FDC11F thick double;
-  border-radius: 20px;
+  // border: #FDC11F thick double;
+  // border-radius: 20px;
   padding-top: 30px;
   // background-color: white;
   // box-shadow: 0 10px 30px rgba(0,0,0,.3);
@@ -83,7 +83,7 @@ img {
 
 #item-1:checked ~ .cards #project-3, #item-2:checked ~ .cards #project-1, #item-3:checked ~ .cards #project-2 {
   transform: translatex(-40%) scale(.8);
-  opacity: .6;
+  // opacity: .6;
   z-index: 0;
   a {
     pointer-events: none;
@@ -92,7 +92,7 @@ img {
 
 #item-1:checked ~ .cards #project-2, #item-2:checked ~ .cards #project-3, #item-3:checked ~ .cards #project-1 {
   transform: translatex(40%) scale(.8);
-  opacity: .6;
+  // opacity: .6;
   z-index: 0;
   a {
     pointer-events: none;

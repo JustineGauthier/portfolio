@@ -14,16 +14,24 @@
  *= require_self
  */
 
+ * {
+   font-family: "Comfortaa", "Helvetica", "sans-serif";
+   box-sizing: border-box;
+  }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
+a {
+  text-decoration: none;
+}
+
+
+
 @import "config/index";
 @import "pages/index";
 @import "components/index";
 @import "font-awesome";
-
-* {
-  font-family: "Comfortaa", "Helvetica", "sans-serif";
-  color: white;
-}
-
-a {
-  text-decoration: none;
-}

@@ -1,0 +1,14 @@
+<div class="flex">
+  <div class="w-1/5">
+    <small class="pb-3 text-sm italic">click a link in the sidebar 👇</small>
+    <ul class="sticky flex flex-col w-full h-auto p-2 space-y-4 bg-white border-4 border-gray-500 rounded-lg top-16">
+      <li><%= link_to "Introduction", "#introduction", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Technical Overview", "#technical_overview", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Philosophy & Design", "#philosophy_design", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Framework Structure", "#framework_structure", data: {controller: "scroll-to"}  %></li>
+      <li><%= link_to "Trademarks", "#trademarks", data: {controller: "scroll-to"}  %></li>
+    </ul>
+  </div>
+
+  <div class="w-4/5"></div>
+</div>

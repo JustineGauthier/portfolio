@@ -2,10 +2,12 @@
   <div class="banner">
     <h1>Hey,<br>I'm Justine,<br>A web developper !</h1>
     <div class="scroll-down">
-      <i class="fa-solid fa-chevron-down"></i>
+      <a href="#carousel-projects" data-controller="scroll-to">
+        <i class="fa-solid fa-chevron-down"></i>
+      </a>
     </div>
   </div>
-  <div class="container">
+  <div class="container" id="carousel-projects">
     <div class="card-background" data-controller="toggle-background">
       <% @projects.each do |project| %>
         <input data-action="click->toggle-background#background"

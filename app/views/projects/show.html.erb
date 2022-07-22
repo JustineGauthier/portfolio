@@ -1,2 +1,13 @@
-<p>coucou</p>
-<%= @project.title %>
+<div class="container background-show">
+  <h1><%= @project.title %></h1>
+  <div class="project-infos">
+    <img src="<%= cl_image_path @project.photo.key, radius: 20 %>" alt="project">
+    <div class="project-description">
+      <h2><%= @project.categorie.name %></h2>
+      <p><i class="fa-solid fa-caret-right"></i> <%= @project.description %></p>
+      <p><i class="fa-solid fa-caret-right"></i> Projet réalisé en <%= ConvertDate.new(date: @project.creation_date.to_s).call %>.</p>
+      <p><i class="fa-solid fa-caret-right"></i> Découvrir ce projet : <%= link_to "#{@project.url}" %></p>
+
+    </div>
+  </div>
+</div>

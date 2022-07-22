@@ -14,23 +14,24 @@
  *= require_self
  */
 
-@import "components/index";
-@import "pages/index";
-@import "config/fonts";
+ * {
+   font-family: "Comfortaa", "Helvetica", "sans-serif";
+   box-sizing: border-box;
+  }
 
-body {
-  font-family: "Comfortaa", "Helvetica", "sans-serif";
-  transition: background-color 1.5s;
-  background-color: #ee857f;
-  background-image: linear-gradient(90deg, rgba(246, 186, 183, 0.7) 0%, rgba(255,255,255,0));
-}
-
-.second_background {
-  background-color: #f9be66;
-  background-image: linear-gradient(90deg, rgba(246, 186, 183, 0.7) 0%, rgba(255,255,255,0));
-}
-
-
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+  }
 a {
   text-decoration: none;
 }
+
+
+
+@import "config/index";
+@import "pages/index";
+@import "components/index";
+@import "font-awesome";
